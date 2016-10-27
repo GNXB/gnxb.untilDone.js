@@ -30,17 +30,17 @@ gnxb.untilDone = function(argv) {
         /*
         params = {
             condition: Function,
-            callback: Function
+            done: Function
         }
         */
         
-        if (!(params.condition && params.callback)) {
+        if (!(params.condition && params.done)) {
             return false;
         }
         
         _this.list.push({
             condition: params.condition,
-            callback: params.callback
+            done: params.done
         });
     };
     
@@ -49,7 +49,7 @@ gnxb.untilDone = function(argv) {
         var removelist = [];
         for (var i=0; i<_this.list.length; i++) {
             if (_this.list[i].condition() == true) {
-                _this.list[i].callback();
+                _this.list[i].done();
                 removelist.push(i);
             }
         }
