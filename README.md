@@ -31,14 +31,14 @@ update_high.add({
     
     // This function must have return true or false to make class work correctly
     if (a >= 5) {
-      // Return true, to stop your above statement and it will execute callback() at once
+      // Return true, to stop your above statement and it will execute done() at once
       return true;
     } else {
       // Return false, to continue loop
       return false;
     }
   },
-  callback() {
+  done() {
     console.log('a:End');
   }
 });
@@ -50,7 +50,7 @@ update_high.add({
     console.log('b:' + b);
     return (b >= 3);
   },
-  callback() {
+  done() {
     console.log('b:End');
   }
 });
@@ -99,7 +99,7 @@ A number of frequency of execute all statement. It is set when passed argument t
 ## `.add(params)`
 `params` is object contain 2 functions that list below
 - `condition()` - The function return `true` when condition is correct and return `false` when codition is incorrect. It will be executed everytime of interval's frequency.
-- `callback()` - The function will be once executed when `condition()` return `true`.
+- `done()` - The function will be once executed when `condition()` return `true`.
 
 The structor of params
 ```javascript
@@ -107,7 +107,7 @@ The structor of params
 	condition() {
 		// --- Your statements ---
 	},
-	callback() {
+	done() {
 		// --- Your statements ---
 	}
 });
@@ -133,7 +133,7 @@ update_low.add({
     // NOTE: JavaScript does not wait for ajax's responsing
     return !news;
   },
-  callback() {
+  done() {
     console.error('Cannot get news feed');
   }
 });
