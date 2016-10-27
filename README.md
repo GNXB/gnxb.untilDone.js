@@ -22,6 +22,7 @@ var update_low = new gnxb.untilDone({ interval: 60000 });
 
 Add all statements that you want to make interval
 ```javascript
+// Statement #1
 update_high.add({
   condition() {
     // Your statement, it will execute every time until return true
@@ -42,6 +43,7 @@ update_high.add({
   }
 });
 
+// Statement #2
 update_high.add({
   condition() {
     b++;
@@ -64,12 +66,16 @@ Result:
 ```
 a:1
 b:1
+
 a:2
 b:2
+
 a:3
 b:3
 b:End
+
 a:4
+
 a:5
 a:End
 ```
